@@ -1,0 +1,6 @@
+@RuleEngine.API_HostAddress = http://localhost:5134
+
+GET {{RuleEngine.API_HostAddress}}/validate/
+Accept: application/json
+
+###

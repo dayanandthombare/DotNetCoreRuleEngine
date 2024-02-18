@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rules>
+	<Rule id="1">
+		<Description>If template A is present as a child, then template B is forbidden as a sibling.</Description>
+		<TemplateA>templateA</TemplateA>
+		<TemplateB>templateB</TemplateB>
+		<Condition type="ChildSiblingRestriction" forbidden="true" />
+	</Rule>
+	<Rule id="2">
+		<Description>If template A is present as a child of node A then template B is required as a child of node B, which is a sibling of node A. This means that the two new nodes based on template A and B are cousins.</Description>
+		<TemplateA>templateA</TemplateA>
+		<TemplateB>templateB</TemplateB>
+		<Condition type="CousinRequirement" required="true" />
+	</Rule>
+	<Rule id="3">
+		<Description>If template A is present as a child, then template B needs to come after template A.</Description>
+		<TemplateA>templateA</TemplateA>
+		<TemplateB>templateB</TemplateB>
+		<Condition type="SequentialRequirement" order="after" />
+	</Rule>
+	<Rule id="4">
+		<Description>If template A is present anywhere in the document, template C is disallowed.</Description>
+		<TemplateA>templateA</TemplateA>
+		<TemplateC>templateC</TemplateC>
+		<Condition type="GlobalRestriction" forbidden="true" />
+	</Rule>
+</Rules>
